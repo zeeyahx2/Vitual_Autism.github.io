@@ -46,14 +46,14 @@
 
     <main class="page">
 
-        <section class="Booking">
+        <section class="Booking" id="page_summary">
             <button class="btn-add" id="btnadd" aria-label="add-booking">
                 <img src="asset/icon/add-booking.svg" alt="booking-button">
             </button>
 
             <section class="calendar">
                 <div class="calendar-container">
-                    <div cal-head>
+                    <div class="cal-head">
                         <div class="month" id="monthTitle"></div>
                         <button id="prevMonth">
                             <img src="asset/icon/prevmonth-arr.svg" alt="prevmonth">
@@ -84,6 +84,97 @@
                 </div>
             </section>
 
+        </section>
+
+        <section class="Booking hidden" id="page_booking">
+            <div class="top-booking">
+                <img src="asset/icon/textBooking.svg" alt="textbooking">
+            </div>
+
+            <p id="pickedDateText"></p>
+
+            <section class="calendar">
+                <div class="calendar-container">
+                    <div class="cal-head">
+                        <div class="calendar" id="monthTitle2"></div>
+                        <button id="prevMonth2">
+                            <img src="asset/icon/prevmonth-arr.svg" alt="prevMonth2">
+                        </button>
+                        <button id="nextMonth2">
+                            <img src="asset/icon/nextmonth-arr.svg" alt="nextMonth2">
+                        </button>
+                    </div>
+
+                    <div class="cal-week">
+                        <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+                    </div>
+
+                    <div class="cal-grid" id="calGrid2"></div>
+                </div>
+            </section>
+
+            <section class="time-row">
+                <div class="time-box">
+                    <div class="tcol">
+                        <button class="tbtn" data-act="sh-">
+                            <img src="asset/icon/upArrow.svg" alt="uphstart">
+                        </button>
+                        <div  class="tval" id="sh">00</div>
+                        <button class="tbtn" data-act="sh+">
+                            <img src="asset/icon/downArrow.svg" alt="downhstart">
+                        </button>
+                    </div>
+
+                    <div class="tcol">
+                        <button class="tbtn" data-act="sm-">
+                            <img src="asset/icon/upArrow.svg" alt="upminstart">
+                        </button>
+                        <div class="tval" id="sm">00</div>
+                        <button class="tbtn" data-act="sm+">
+                            <img src="asset/icon/downArrow.svg" alt="downminstart">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="to">TO</div>
+
+                <div class="time-box">
+                    <div class="tcol">
+                        <button class="tbtn" data-act="eh-">
+                            <img src="asset/icon/upArrow.svg" alt="uphend">
+                        </button>
+                        <div  class="tval" id="eh">00</div>
+                        <button class="tbtn" data-act="eh+">
+                            <img src="asset/icon/downArrow.svg" alt="downhend">
+                        </button>
+                    </div>
+
+                    <div class="tcol">
+                        <button class="tbtn" data-act="em-">
+                            <img src="asset/icon/upArrow.svg" alt="upminend">
+                        </button>
+
+                        <div class="tval" id="em">00</div>
+
+                        <button class="tbtn" data-act="em+">
+                            <img src="asset/icon/downArrow.svg" alt="downminend">
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="note-card">
+                <div class="note-label">Add Note</div>
+                <input id="bookingnote" class="note-input" placeholder="" />
+                <div class="lines">
+                    <div></div><div></div><div></div>
+                </div>
+            </section>
+
+            <section class="button-act">
+                <button id="btnBack" class="abtn">BACK</button>
+                <button id="btnAccept" class="abtn">ACCEPT</button>
+            </section>
         </section>
     </main>
 
