@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    <!-- <header class="top">
+        <div class="background-top">
+            <img src="asset/icon/sun-clown.svg" alt="background-top">
+        </div>
+    </header> -->
 
     <nav class="navbar">
         <div class="circle">
@@ -39,10 +44,46 @@
         </a>
     </nav>
 
-    <main>
+    <main class="page">
 
         <section class="Booking">
-            
+            <button class="btn-add" id="btnadd" aria-label="add-booking">
+                <img src="asset/icon/add-booking.svg" alt="booking-button">
+            </button>
+
+            <section class="calendar">
+                <div class="calendar-container">
+                    <div cal-head>
+                        <div class="month" id="monthTitle"></div>
+                        <button id="prevMonth">
+                            <img src="asset/icon/prevmonth-arr.svg" alt="prevmonth">
+                        </button>
+                        <button id="nextMonth">
+                            <img src="asset/icon/nextmonth-arr.svg" alt="nextMonth">
+                        </button>
+                    </div>
+
+                    <div class="cal-week">
+                        <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+                    </div>
+
+                    <div class="cal-grid" id="calGrid">
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="summary-card">
+                <div class="summary-head">
+                    <h2>Summary Activity</h2>
+                    <img src="asset/icon/flower.svg" alt="flower-sum">
+                </div>
+
+                <div id="summarybox" class="summary-box">
+                    <p class="muted">ยังไม่ได้เลือกวัน</p>
+                </div>
+            </section>
+
         </section>
     </main>
 

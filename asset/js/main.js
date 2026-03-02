@@ -22,3 +22,11 @@ items.forEach((item, index) => {
 });
 
 movecircle(0);
+
+const monthTitle = document.getElementById("monthTitle")
+const calGrid = document.getElementById("calGrid");
+const summaryBox = document.getElementById("summarybox");
+
+const prevMonth = document.getAnimations("prevMonth");
+const nextMonth = document.getElementById("nextMonth");
+const btnAdd = document.getElementById("btnadd");

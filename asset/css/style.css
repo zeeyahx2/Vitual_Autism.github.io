@@ -1,3 +1,11 @@
 body{
+    overflow-x: hidden;
+    display: flow-root;
+    margin: 0 auto;
+    font-family: 'Kodchasal',sans-serif;
+    background-image: url("../icon/sun-clown.svg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #EDECDB;
     max-width: 390px;
 }

@@ -11,12 +11,7 @@
     font-family: 'Kodchasal';
     box-sizing: border-box;
 }
-body{
-    background-color: #EDECDB;
-    overflow-x: hidden;
-    max-width: 450px;
-    margin: auto;
-}
+
 .navbar{
     background: #E6748E;
     border-radius: 20px;
