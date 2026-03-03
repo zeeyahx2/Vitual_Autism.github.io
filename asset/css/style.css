@@ -1,15 +1,36 @@
 body{
     overflow-x: hidden;
-    display: flow-root;
-    margin: 0 auto;
+    display: flex;
+    margin: 0;
     font-family: 'Kodchasal',sans-serif;
     background-image: url("../icon/sun-clown.svg");
     background-position: top center;
     background-repeat: no-repeat;
     background-color: #EDECDB;
     max-width: none;   /* อย่าล็อค body */
+    justify-items: center;
+    justify-content: center;
 }
 
 
 .hidden{display: none;}
 
+:root{
+    --bg: #F7F4D5;
+    --card: #fff;
+    --bluegreen: #6BB1AD;
+    --grey: #A7BCBD;
+    --babygreen: #EDECDB;
+    --babypink: #E5A9A9;
+    --pink: #E6748E;
+
+    --shadow: 0 10px 30px rgba(0,0,0,.08);
+    --radius-lg: 24px;
+    --radius-md: 18px;
+}
+
+html,body{ height: 100%;}
+
+@media(max-width:450px){
+    
+}

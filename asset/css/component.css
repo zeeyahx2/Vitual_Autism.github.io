@@ -12,6 +12,15 @@
     box-sizing: border-box;
 }
 
+.main.page{
+    max-width: 450px;
+    min-height: 100vh;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 110px;
+}
+
 .navbar{
     background: #E6748E;
     border-radius: 20px;
@@ -28,6 +37,8 @@
     height: 60px;
     margin-bottom: 10px;
     padding-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .nav-item{
     color: #fff;
@@ -42,7 +53,7 @@
 }
 .nav-item img{
     width: 24px;
-      display: block;
+    display: block;
     margin: 0 auto;
     
 }
@@ -80,4 +91,130 @@
 }
 .ellipse img{
     width: 100%;
+}
+
+#page_summary .btn-add{
+    position: absolute;
+    right: 18px;
+    top: 22px;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    z-index: 2;
+}
+#page_summary .btn-add img{
+    width: 28px;
+    height: auto;
+}
+.calendar{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+    margin-top: 8px;
+    /* max-width: 390px; */
+}
+
+.calendar-container{
+    display: flex;
+    flex-direction: column;
+
+    background-color: #fff;
+
+    padding: 20px;
+    gap: 18px 16px 14px;
+    border-radius: 26px;
+}
+
+.cal-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    gap: 50px;
+    position: relative;
+    justify-content: center;
+}
+
+.cal-head .month, .cal-head #monTitle2{
+    font-weight: 800;
+    letter-spacing: .2px;
+}
+
+.pnmonth{
+    position: absolute;
+    right: 4px;
+    display: flex;
+    gap: 8px;
+}
+
+#page_booking .cal-head button, .pnmonth button{
+    width: 34px;
+    height: 34px;
+    border: 0;
+    background: transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+
+#page_booking .cal-head button:hover, .pnmonth button:hover{
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.pnmonth img,#page_booking .cal-head img{
+    width: 18px;
+    height: auto;
+}
+
+.pnmonth button,#page_booking .cal-head button{
+    background: transparent;
+    border: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.cal-week{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 800;
+    color: #000;
+    margin: 8px 0 6px;
+}
+
+.cal-grid{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 8px 4px;
+    padding: 6px 2px 2px;
+}
+
+.day{
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.day.muted{
+    color: grey; /*ให้เดือนก่อนจาง*/
+}
+
+.day:hover{
+    background: rgba(230, 116, 142, 0.12);
+}
+
+.day.selected{
+    background: #E6748E;
+    color: #fff;
 }
