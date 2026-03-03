@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Kodchasal';
-  src: url('asset/fonts/KODCHASAN-REGULAR.TTF') format('truetype');
+  src: url('../assets/TH Kodchasal.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
@@ -13,11 +13,12 @@
 }
 
 main.page{
+    width: 100%;
     max-width: 450px;
+    margin: 0 auto;
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
-    overflow-y: auto;
     padding-bottom: calc(60px + 40px);
 }
 
@@ -29,13 +30,13 @@ main.page{
     justify-content: space-between;
     align-items: center;
     position: fixed; 
-    bottom: 10px;
+    bottom: 0;
     width: 100%;
     max-width: 450px;
     left: 50%;
     transform: translateX(-50%);
     height: 60px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     padding-top: 30px;
 }
 .nav-item{
@@ -51,7 +52,7 @@ main.page{
 }
 .nav-item img{
     width: 24px;
-    display: block;
+      display: block;
     margin: 0 auto;
     
 }
@@ -124,25 +125,32 @@ main.page{
 }
 
 #page_summary .btn-add{
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 40px;
-    height: 40px;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-    z-index: 2;
+  position:absolute;
+  top:16px;
+  right:16px;
+  width:40px;
+  height:40px;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  z-index:2;
 }
 #page_summary .btn-add img{
-    width: 28px;
-    height: auto;
+  width:28px;
+  height:auto;
 }
 
 #page_booking{
-position: relative;
-  overflow: hidden;
-  padding-top: 90px;
+    max-width: 390px;
+  margin: 0 auto;
+  padding: 90px 16px 120px;
+}
+
+#page_booking .calendar-container,
+#page_booking .time-row,
+#page_booking .note-input,
+#page_booking .button-act{
+  width: 100%;
 }
 
 #page_booking .mnt{
@@ -208,21 +216,6 @@ position: relative;
     font-size: 13px;
 }
 
-#page_summary .btn-add{
-    position: absolute;
-    right: 18px;
-    top: 22px;
-    width: 38px;
-    height: 38px;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-    z-index: 2;
-}
-#page_summary .btn-add img{
-    width: 28px;
-    height: auto;
-}
 .calendar{
     display: flex;
     align-items: center;
@@ -249,12 +242,10 @@ position: relative;
     justify-content: center;
     align-items: center;
     height: 50px;
-    gap: 50px;
     position: relative;
-    justify-content: center;
 }
 
-.cal-head .month, .cal-head #monthTitle2{
+.cal-head .month{
     font-weight: 800;
     letter-spacing: .2px;
 }

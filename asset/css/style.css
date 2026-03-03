@@ -1,6 +1,6 @@
 body{
     overflow-x: hidden;
-    display: flex;
+    display: block;
     margin: 0;
     font-family: 'Kodchasal',sans-serif;
     background-image: url("../icon/sun-clown.svg");

@@ -143,6 +143,8 @@ nextMonth.addEventListener("click", () => {
   renderCalendar();
 });
 
+let current2 = new Date(2026, 0, 1);
+
 //ไปหน้าเพิ่มbooking
 btnAdd.addEventListener("click",() => {
   selectDate = null; //ล้างค่าเมื่อเข้ามาใหม่
@@ -202,8 +204,6 @@ const sm = document.getElementById("sm");
 const eh = document.getElementById("eh");
 const em = document.getElementById("em");
 
-let current2 = new Date(2026, 0, 1);
-
 prevMonth2.addEventListener("click", () => {
   current2 = new Date(current2.getFullYear(), current2.getMonth() - 1, 1);
   renderCalendar2();
@@ -253,11 +253,14 @@ function renderCalendar2(){
   }
 }
 
-function changeVal(el, max, step, dir){
+function changeVal(el, maxInclusive, step, dir){
   let v = parseInt(el.textContent,10);
-  v+= dir * step;
-  if(v>max) v =0;
-  if(v<0) v=max;
+  const range = maxInclusive + 1;      // 24 หรือ 60
+  v = (v + dir*step) % range;
+  if(v < 0) v += range;
+  // บังคับให้เป็นช่วงของ step (เช่น 0,5,10,...55)
+  if(step > 1) v = Math.round(v/step)*step;
+  if(v > maxInclusive) v = 0;
   el.textContent = pad2(v);
 }
 
@@ -269,9 +272,9 @@ document.querySelectorAll(".tbtn").forEach(btn => {
     const key = act.slice(0,2);
 
     if(key==="sh") changeVal(sh, 23, 1, dir);
-    if(key==="sm") changeVal(sm, 55, 5, dir);
+    if(key==="sm") changeVal(sm, 59, 5, dir);
     if(key==="eh") changeVal(eh, 23, 1, dir);
-    if(key==="em") changeVal(em, 55, 5, dir);
+    if(key==="em") changeVal(em, 59, 5, dir);
   });
 });
 
@@ -287,3 +290,12 @@ function toMin(t){
 renderCalendar();
 renderSummary();
 
+// หลัง loop วันเดือนนี้
+const totalCells = calGrid2.children.length;
+const need = 42 - totalCells;
+for(let i=1;i<=need;i++){
+  const cell = document.createElement("div");
+  cell.className = "day muted";
+  cell.textContent = i;
+  calGrid2.appendChild(cell);
+}
