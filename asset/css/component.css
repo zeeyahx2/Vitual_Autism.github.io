@@ -29,13 +29,13 @@ main.page{
     justify-content: space-between;
     align-items: center;
     position: fixed; 
-    bottom: 0;
+    bottom: 10px;
     width: 100%;
     max-width: 450px;
     left: 50%;
     transform: translateX(-50%);
     height: 60px;
-    margin-bottom: 10px;
+    margin-bottom: 0;
     padding-top: 30px;
 }
 .nav-item{
@@ -140,7 +140,39 @@ main.page{
 }
 
 #page_booking{
-    width: 100%;
+position: relative;
+  overflow: hidden;
+  padding-top: 90px;
+}
+
+#page_booking .mnt{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 55px;
+  width: 300px;
+  height: auto;
+  z-index: 0;
+  display: block;
+  pointer-events: none; /* ✅ ต้องมี ; */
+  opacity: .95; 
+}
+
+#page_booking .top-booking,
+#page_booking #pickedDateText,
+#page_booking .calendar,
+#page_booking .time-row,
+#page_booking .note-card,
+#page_booking .button-act{
+  position: relative;
+  z-index: 1;
+}
+
+#page_booking .top-booking{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 #page_booking .calendar{
@@ -423,4 +455,22 @@ main.page{
   margin-top: 6px;
   font-size: 13px;
   font-weight: 800;
+}
+
+.top-booking{
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* ✅ จัดกลางแนวนอน */
+  align-items: center;
+  margin-top: 20px;
+}
+
+.top-booking img{
+  width: 220px;      /* ปรับขนาดตามต้องการ */
+  height: auto;
+  display: block;    /* กันช่องว่างแปลก ๆ */
+}
+
+.note-input{
+  font-size: 16px;  /* ✅ กัน iOS auto zoom */
 }
