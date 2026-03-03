@@ -12,13 +12,13 @@
     box-sizing: border-box;
 }
 
-.main.page{
+main.page{
     max-width: 450px;
     min-height: 100vh;
-    background: var(--bg);
     position: relative;
-    overflow: hidden;
-    padding-bottom: 110px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: calc(60px + 40px);
 }
 
 .navbar{
@@ -37,8 +37,6 @@
     height: 60px;
     margin-bottom: 10px;
     padding-top: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 .nav-item{
     color: #fff;
@@ -93,6 +91,91 @@
     width: 100%;
 }
 
+#page_summary{
+  position: relative;
+  padding: 72px 18px 0;
+}
+
+#page_summary .calendar{
+    align-items: center;
+    gap: 15px;
+}
+
+#page_summary .cal-head{
+    height: 44px;
+    gap: 0;
+}
+
+#page_summary .cal-week{
+    font-size: 13px;
+    color: #111;
+    margin: 6px 0 0;
+}
+
+#page_summary .cal-grid{
+    gap: 10px 6px;
+    padding: 6px 0 0;
+}
+
+#page_summary .day{
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+}
+
+#page_summary .btn-add{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    z-index: 2;
+}
+#page_summary .btn-add img{
+    width: 28px;
+    height: auto;
+}
+
+#page_booking{
+    width: 100%;
+}
+
+#page_booking .calendar{
+    align-items: center;
+}
+
+/* #page_booking .calendar-container{
+    width: min(340px, 100%);
+    max-width: 340px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    gap: 18px; 
+} */
+
+#page_booking .cal-head{
+    height: 44px;
+    gap: 0;
+}
+
+#page_booking .cal-week{
+    font-size: 13px;
+    color: #111;
+    margin: 4px 0 0;
+}
+
+#page_booking .cal-grid{
+    gap: 10px 6px;
+    padding: 6px 0 0;
+}
+
+#page_booking .day{
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+}
+
 #page_summary .btn-add{
     position: absolute;
     right: 18px;
@@ -125,7 +208,7 @@
     background-color: #fff;
 
     padding: 20px;
-    gap: 18px 16px 14px;
+    gap: 18px;
     border-radius: 26px;
 }
 
@@ -139,7 +222,7 @@
     justify-content: center;
 }
 
-.cal-head .month, .cal-head #monTitle2{
+.cal-head .month, .cal-head #monthTitle2{
     font-weight: 800;
     letter-spacing: .2px;
 }
@@ -217,4 +300,127 @@
 .day.selected{
     background: #E6748E;
     color: #fff;
+}
+
+.summary-card{
+    margin-top: 14px;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 26px;
+    padding: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    min-height: 240px;
+}
+
+.summary-head{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.summary-head h2{
+    font-size: 16px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.summary-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sum-date{
+    font-weight: 900;
+    margin-bottom: 6px;
+}
+
+.sum-item{
+  background:rgba(255,255,255,.4);
+  padding:6px 10px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:800;
+}
+
+.time-row{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:12px;
+  margin-top:14px;
+  align-items:center;
+}
+
+.time-box{
+  background:#fff;
+  border-radius:18px;
+  padding:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  display:flex;
+  justify-content:center;
+  gap:12px;
+}
+
+.tcol{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+}
+
+.tbtn{
+  width:34px;
+  height:28px;
+  border:0;
+  background:rgba(0,0,0,.05);
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.tval{
+  font-weight:900;
+  font-size:16px;
+}
+
+.button-act{
+  display:flex;
+  gap:14px;
+  margin-top:18px;
+}
+
+.abtn{
+  flex:1;
+  height:40px;
+  border-radius:999px;
+  border:2px solid rgba(0,0,0,.12);
+  background:#fff;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 6px 16px rgba(0,0,0,.08);
+}
+
+#page_summary .summary-card{
+  padding: 14px;
+  min-height: 220px;
+}
+
+#page_summary .sum-day{
+  background: #B7C3C5;
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+#page_summary .sum-date{
+  font-weight: 900;
+  margin: 0 0 6px 0;
+}
+
+#page_summary .sum-item{
+  background: rgba(255,255,255,.35);
+  border-radius: 12px;
+  padding: 6px 10px;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 800;
 }
