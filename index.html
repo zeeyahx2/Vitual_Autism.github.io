@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,178 +9,264 @@
 </head>
 
 <body>
-    <!-- <header class="top">
-        <div class="background-top">
-            <img src="asset/icon/sun-clown.svg" alt="background-top">
-        </div>
-    </header> -->
-
     <nav class="navbar">
         <div class="circle">
             <div class="ellipse">
-                <img src="asset/icon/Ellipse 2.svg">
+                <img src="asset/icon/Ellipse 2.svg" alt="ellipse">
             </div>
         </div>
-        
+
         <a href="#" class="nav-item active" data-index="0">
-            <img src="asset/icon/Home.svg">
-           <b> <span>Home</span></b>
+            <img src="asset/icon/Home.svg" alt="home">
+            <b><span>Home</span></b>
         </a>
 
         <a href="#" class="nav-item" data-index="1">
-            <img src="asset/icon/Quest.svg">
+            <img src="asset/icon/Quest.svg" alt="quest">
             <b><span>Quest</span></b>
         </a>
 
         <a href="#" class="nav-item" data-index="2">
-            <img src="asset/icon/History.svg">
+            <img src="asset/icon/History.svg" alt="history">
             <b><span>History</span></b>
         </a>
 
         <a href="#" class="nav-item" data-index="3">
-            <img src="asset/icon/Booking.svg">
+            <img src="asset/icon/Booking.svg" alt="booking">
             <b><span>Booking</span></b>
         </a>
     </nav>
 
-    <main class="page">
+    <main>
+        <!-- Home -->
+        <section class="tab-page active" data-index="0">
+            <div class="timer-box">
+                <div id="timerView">
+                    <div class="tabs">
+                        <div class="tab active" onclick="switchMode(0)">Play</div>
+                        <div class="tab" onclick="switchMode(1)">Break</div>
+                        <div class="tab" onclick="switchMode(2)">Play</div>
+                    </div>
 
-        <section class="Booking" id="page_summary">
-            <button class="btn-add" id="btnadd" aria-label="add-booking">
-                <img src="asset/icon/add-booking.svg" alt="booking-button">
-            </button>
+                    <div class="time" id="display">20:00</div>
 
-            <section class="calendar">
-                <div class="calendar-container">
-                    <div class="cal-head">
-                        <div class="month" id="monthTitle"></div>
-                        <div class="pnmonth">
-                            <button id="prevMonth">
-                                <img src="asset/icon/prevmonth-arr.svg" alt="prevmonth">
+                    <div class="controls">
+                        <button class="icon" onclick="resetTimer()">
+                            <img src="asset/ar.png" alt="timer">
+                        </button>
+
+                        <button class="start-btn" id="startBtn" onclick="toggleTimer()">Start</button>
+
+                        <button class="icon" onclick="openSettings()">
+                            <img src="asset/set.png" alt="settings">
+                        </button>
+                    </div>
+                </div>
+
+                <div id="settingsView">
+                    <div class="settings-header" onclick="closeSettings()">‹ Settings</div>
+
+                    <div class="settings-labels">
+                        <span>Play</span>
+                        <span>Break</span>
+                        <span>Play</span>
+                    </div>
+
+                    <div class="settings-inputs">
+                        <input type="number" id="play1" value="20">
+                        <input type="number" id="breakTime" value="5">
+                        <input type="number" id="play2" value="20">
+                    </div>
+
+                    <button class="set-btn" onclick="setTime()">SET</button>
+                </div>
+            </div>
+
+            <section class="recommend">
+                <div class="recommend-box" id="card">
+                    <div class="pic-name">
+                        <h1 class="name">playground</h1>
+                        <img src="asset/pic.jpg" alt="playground" class="picture">
+                    </div>
+
+                    <div class="article">
+                        <p class="content short-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea ...
+                        </p>
+
+                        <p class="content full-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+
+                        <div class="stars" id="ratingStars">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+
+                        <button class="readmore" id="readMoreBtn">READ MORE</button>
+                        <button class="close-btn" id="closeBtn">Close</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Quest -->
+        <section class="tab-page" data-index="1">
+            <!-- หน้า Quest -->
+        </section>
+
+        <!-- History -->
+        <section class="tab-page" data-index="2">
+            <!-- หน้า History -->
+        </section>
+
+        <!-- Booking -->
+        <section class="tab-page" data-index="3">
+            <section class="Booking" id="page_summary">
+                <button class="btn-add" id="btnadd" aria-label="add-booking">
+                    <img src="asset/icon/add-booking.svg" alt="booking-button">
+                </button>
+
+                <section class="calendar">
+                    <div class="calendar-container">
+                        <div class="cal-head">
+                            <div class="month" id="monthTitle"></div>
+                            <div class="pnmonth">
+                                <button id="prevMonth">
+                                    <img src="asset/icon/prevmonth-arr.svg" alt="prevmonth">
+                                </button>
+                                <button id="nextMonth">
+                                    <img src="asset/icon/nextmonth-arr.svg" alt="nextMonth">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="cal-week">
+                            <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+                        </div>
+
+                        <div class="cal-grid" id="calGrid"></div>
+                    </div>
+                </section>
+
+                <section class="summary-card">
+                    <div class="summary-head">
+                        <h2>Summary Activity</h2>
+                        <img src="asset/icon/flower.svg" alt="flower-sum">
+                    </div>
+
+                    <div id="summarybox" class="summary-box">
+                        <p class="muted">ยังไม่ได้เลือกวัน</p>
+                    </div>
+                </section>
+            </section>
+
+            <section class="Booking hidden" id="page_booking">
+                <img class="mnt" src="asset/icon/mnt.svg" alt="mountain">
+
+                <div class="top-booking">
+                    <img src="asset/icon/textBooking.svg" alt="textbooking">
+                </div>
+
+                <p id="pickedDateText"></p>
+
+                <section class="calendar">
+                    <div class="calendar-container">
+                        <div class="cal-head">
+                            <div class="month" id="monthTitle2"></div>
+
+                            <button id="prevMonth2">
+                                <img src="asset/icon/prevmonth-arr.svg" alt="prevMonth2">
                             </button>
-                            <button id="nextMonth">
-                                <img src="asset/icon/nextmonth-arr.svg" alt="nextMonth">
+
+                            <button id="nextMonth2">
+                                <img src="asset/icon/nextmonth-arr.svg" alt="nextMonth2">
+                            </button>
+                        </div>
+
+                        <div class="cal-week">
+                            <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+                        </div>
+
+                        <div class="cal-grid" id="calGrid2"></div>
+                    </div>
+                </section>
+
+                <section class="time-row">
+                    <div class="time-box">
+                        <div class="tcol">
+                            <button class="tbtn" data-act="sh-">
+                                <img src="asset/icon/upArrow.svg" alt="uphstart">
+                            </button>
+                            <div class="tval" id="sh">00</div>
+                            <button class="tbtn" data-act="sh+">
+                                <img src="asset/icon/downArrow.svg" alt="downhstart">
+                            </button>
+                        </div>
+
+                        <div class="tcol">
+                            <button class="tbtn" data-act="sm-">
+                                <img src="asset/icon/upArrow.svg" alt="upminstart">
+                            </button>
+                            <div class="tval" id="sm">00</div>
+                            <button class="tbtn" data-act="sm+">
+                                <img src="asset/icon/downArrow.svg" alt="downminstart">
                             </button>
                         </div>
                     </div>
 
-                    <div class="cal-week">
-                        <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+                    <div class="to">TO</div>
+
+                    <div class="time-box">
+                        <div class="tcol">
+                            <button class="tbtn" data-act="eh-">
+                                <img src="asset/icon/upArrow.svg" alt="uphend">
+                            </button>
+                            <div class="tval" id="eh">00</div>
+                            <button class="tbtn" data-act="eh+">
+                                <img src="asset/icon/downArrow.svg" alt="downhend">
+                            </button>
+                        </div>
+
+                        <div class="tcol">
+                            <button class="tbtn" data-act="em-">
+                                <img src="asset/icon/upArrow.svg" alt="upminend">
+                            </button>
+                            <div class="tval" id="em">00</div>
+                            <button class="tbtn" data-act="em+">
+                                <img src="asset/icon/downArrow.svg" alt="downminend">
+                            </button>
+                        </div>
                     </div>
+                </section>
 
-                    <div class="cal-grid" id="calGrid">
-
+                <section class="note-card">
+                    <div class="note-label">Add Note</div>
+                    <input id="bookingnote" class="note-input" placeholder="">
+                    <div class="lines">
+                        <div></div>
+                        <div></div>
+                        <div></div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section class="summary-card">
-                <div class="summary-head">
-                    <h2>Summary Activity</h2>
-                    <img src="asset/icon/flower.svg" alt="flower-sum">
-                </div>
-
-                <div id="summarybox" class="summary-box">
-                    <p class="muted">ยังไม่ได้เลือกวัน</p>
-                </div>
-            </section>
-
-        </section>
-
-        <section class="Booking hidden" id="page_booking">
-            <img class="mnt" src="asset/icon/mnt.svg" alt="mountain">
-            <div class="top-booking">
-                <img src="asset/icon/textBooking.svg" alt="textbooking">
-            </div>
-
-            <p id="pickedDateText"></p>
-
-            <section class="calendar">
-                <div class="calendar-container">
-                    <div class="cal-head">
-                        <div class="month" id="monthTitle2"></div>
-                        <button id="prevMonth2">
-                            <img src="asset/icon/prevmonth-arr.svg" alt="prevMonth2">
-                        </button>
-                        <button id="nextMonth2">
-                            <img src="asset/icon/nextmonth-arr.svg" alt="nextMonth2">
-                        </button>
-                    </div>
-
-                    <div class="cal-week">
-                        <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
-                    </div>
-
-                    <div class="cal-grid" id="calGrid2"></div>
-                </div>
-            </section>
-
-            <section class="time-row">
-                <div class="time-box">
-                    <div class="tcol">
-                        <button class="tbtn" data-act="sh-">
-                            <img src="asset/icon/upArrow.svg" alt="uphstart">
-                        </button>
-                        <div  class="tval" id="sh">00</div>
-                        <button class="tbtn" data-act="sh+">
-                            <img src="asset/icon/downArrow.svg" alt="downhstart">
-                        </button>
-                    </div>
-
-                    <div class="tcol">
-                        <button class="tbtn" data-act="sm-">
-                            <img src="asset/icon/upArrow.svg" alt="upminstart">
-                        </button>
-                        <div class="tval" id="sm">00</div>
-                        <button class="tbtn" data-act="sm+">
-                            <img src="asset/icon/downArrow.svg" alt="downminstart">
-                        </button>
-                    </div>
-                </div>
-
-                <div class="to">TO</div>
-
-                <div class="time-box">
-                    <div class="tcol">
-                        <button class="tbtn" data-act="eh-">
-                            <img src="asset/icon/upArrow.svg" alt="uphend">
-                        </button>
-                        <div  class="tval" id="eh">00</div>
-                        <button class="tbtn" data-act="eh+">
-                            <img src="asset/icon/downArrow.svg" alt="downhend">
-                        </button>
-                    </div>
-
-                    <div class="tcol">
-                        <button class="tbtn" data-act="em-">
-                            <img src="asset/icon/upArrow.svg" alt="upminend">
-                        </button>
-
-                        <div class="tval" id="em">00</div>
-
-                        <button class="tbtn" data-act="em+">
-                            <img src="asset/icon/downArrow.svg" alt="downminend">
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="note-card">
-                <div class="note-label">Add Note</div>
-                <input id="bookingnote" class="note-input" placeholder="" />
-                <div class="lines">
-                    <div></div><div></div><div></div>
-                </div>
-            </section>
-
-            <section class="button-act">
-                <button id="btnBack" class="abtn">BACK</button>
-                <button id="btnAccept" class="abtn">ACCEPT</button>
+                <section class="button-act">
+                    <button id="btnBack" class="abtn">BACK</button>
+                    <button id="btnAccept" class="abtn">ACCEPT</button>
+                </section>
             </section>
         </section>
     </main>
 
     <script src="asset/js/main.js"></script>
 </body>
-
 </html>
